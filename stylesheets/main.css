@@ -29,7 +29,7 @@ body {
 
 
 #carousel {
-  width:122px;
+  width:172px;
   margin:0 auto;
 }
   #carousel .prev,
@@ -44,7 +44,7 @@ body {
     background-position:bottom left;
   }  
   #carousel .wrapper {
-    width:120px;
+    width:170px;
     padding:5px 0 5px 0;
     background-color:#ebebeb;
     border:1px solid #e1e1e1;
@@ -62,7 +62,7 @@ body {
 
 
 
-footer { padding-top:10px; }
+footer { padding:10px 0 20px 0; }
   footer p {
     font-size:10px; color:#888888;
     letter-spacing:0;
