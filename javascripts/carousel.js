@@ -50,4 +50,38 @@ jQuery(document).ready(function($) {
                 items.animateContainer(currentPosition);
             }
         });
+    
+    items.container
+        .css('cursor', 'pointer')
+        .draggable({
+            axis: 'y',
+            stop: function(event, ui) {
+
+                if (ui.position.top > items.initialPosition) {
+                    currentPosition = items.initialPosition;
+
+                } else if (ui.position.top < maxPosition) {
+                    currentPosition = maxPosition;
+
+                } else {
+                    var dragPosition = -(ui.position.top);
+
+                    for(var x = 0; x < items.count; x++) {
+                        if(
+                            dragPosition >= (x*items.height)
+                            && dragPosition < ((x+1)*items.height)
+                        ){                            
+                            multiplier = x;
+                            if(dragPosition-(x*items.height) > (items.height/2)) {
+                                multiplier = x + 1;
+                            }
+
+                            currentPosition = -(items.height*multiplier)+items.initialPosition;
+                        }
+                    }
+                }
+
+                items.animateContainer(currentPosition);
+            }
+        });
 });
